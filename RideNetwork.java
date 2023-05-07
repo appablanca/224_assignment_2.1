@@ -27,7 +27,7 @@ public class RideNetwork {
             graph.get(from).add(to);
         }
 
-        // Print the outgoing edges from each taxi pickup
+        // rint the outgoing edges from each taxi pickup
         
         for (String pickup : graph.keySet()) {
             System.out.println(pickup + ": " + String.join(" ", graph.get(pickup)));
