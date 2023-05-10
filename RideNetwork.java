@@ -29,9 +29,12 @@ public class RideNetwork {
 
         // rint the outgoing edges from each taxi pickup
         
-        for (String pickup : graph.keySet()) {
-            System.out.println(pickup + ": " + String.join(" ", graph.get(pickup)));
-        }
+        List<String> pickups = new ArrayList<>(graph.keySet());
+        Collections.sort(pickups, Comparator.comparing(s -> s.substring(0, 1)));
+
+    for (String pickup : pickups) {
+        System.out.println(pickup + ": " + String.join(" ", graph.get(pickup)));
+    }
 
         boolean isTree = isTree(graph, n);
         System.out.println((isTree ? "This ride network can be kept in a tree structure."
